@@ -64,7 +64,7 @@ function App() {
                     ))}
 
 
-                    {pathname === "/my-tokens" && (
+                    {MyNFTpage === true && (
                         tokenMetaDataArray.map((token, i) => (
                             <NFTOwnerCard
                                 key={token.name.split(" ").join("")}

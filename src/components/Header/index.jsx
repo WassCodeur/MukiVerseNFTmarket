@@ -8,7 +8,7 @@ import useMintToken from "../../hooks/useMintToken";
 
 const Header = () => {
     const { address } = useAccount();
-    const { setMyNFTpage } = useAppContext();
+    const {  setMyNFTpage } = useAppContext();
     const pathname = window.location.pathname;
     const mintToken = useMintToken();
 
@@ -19,7 +19,14 @@ const Header = () => {
             setMyNFTpage(false);
         }
     },[pathname]);
+    const disabledMyNFTpage = () => {
+            setMyNFTpage(false);
+        
+    }
+    const enabledMyNFTpage = () => {
+        setMyNFTpage(true);
 
+    }
     const NavLink = ({ href, icon, children }) => (
         <a
             href={href}
@@ -55,18 +62,18 @@ const Header = () => {
             <Flex gap="6" align="center">
                 {address && (
                     <nav className="hidden md:flex items-center gap-6">
-                        <NavLink
-                            href="/"
+                        <button className="bg-primary/80 text-secondary font-semibold px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-2"
+                            onClick={disabledMyNFTpage}
                         >
-                            <Icon icon="ph:squares-four-bold" className="w-5 h-5 text-white-600" />
+                            <Icon icon="ph:squares-four-bold" className="hidden md:flex items-center gap-6" />
                             Marketplace
-                        </NavLink>
-                        <NavLink
-                            href="/my-tokens"
+                        </button>
+                        <button className="bg-primary/80 text-secondary font-semibold px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-2"
+                            onClick={enabledMyNFTpage}
                         >
                             <Icon icon="ph:wallet-bold" className="w-5 h-5 text-white-600" />
                             My NFTs
-                        </NavLink>
+                        </button>
                         <button
                             className="bg-primary/80 text-secondary font-semibold px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-2"
                             onClick={mintToken}
