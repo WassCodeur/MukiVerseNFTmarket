@@ -2,7 +2,7 @@ import { createConfig, http } from "wagmi";
 import { liskSepolia, holesky, } from "wagmi/chains";
 import { walletConnect } from "wagmi/connectors";
 
-export const supportedNetworks = [holesky, liskSepolia];
+export const supportedNetworks = [liskSepolia, holesky, ];
 
 export const config = createConfig({
     chains: supportedNetworks,
@@ -11,9 +11,9 @@ export const config = createConfig({
         walletConnect({ projectId: import.meta.env.VITE_REOWN_PROJECT_ID }),
     ],
     transports: {
-        
-        [holesky.id]: http(),
         [liskSepolia.id]: http(),
+        [holesky.id]: http(),
+        
         
         
     },
