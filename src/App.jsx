@@ -9,6 +9,7 @@ import { useAccount } from "wagmi";
 function App() {
     const { nextTokenId, tokenMetaData, mintPrice, MyNFTpage } = useAppContext();
     const account = useAccount();
+    const pathname = window.location.pathname;
 
     console.log("nextTokenId: ", nextTokenId);
     console.log(MyNFTpage)
@@ -63,7 +64,7 @@ function App() {
                     ))}
 
 
-                    {MyNFTpage == true && (
+                    {pathname === "/my-tokens" && (
                         tokenMetaDataArray.map((token, i) => (
                             <NFTOwnerCard
                                 key={token.name.split(" ").join("")}

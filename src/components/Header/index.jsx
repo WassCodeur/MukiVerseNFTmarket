@@ -18,8 +18,7 @@ const Header = () => {
         } else {
             setMyNFTpage(false);
         }
-    }
-        , [pathname]);
+    },[pathname]);
 
     const NavLink = ({ href, icon, children }) => (
         <a
