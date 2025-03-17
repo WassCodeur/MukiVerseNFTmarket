@@ -62,13 +62,13 @@ const Header = () => {
             <Flex gap="6" align="center">
                 {address && (
                     <nav className="hidden md:flex items-center gap-6">
-                        <button className="bg-primary/80 text-secondary font-semibold px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-2"
+                        <button className="text-secondary/90 hover:text-secondary font-medium transition-colors duration-200 flex items-center gap-1"
                             onClick={disabledMyNFTpage}
                         >
                             <Icon icon="ph:squares-four-bold" className="hidden md:flex items-center gap-6" />
                             Marketplace
                         </button>
-                        <button className="bg-primary/80 text-secondary font-semibold px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-2"
+                        <button className="text-secondary/90 hover:text-secondary font-medium transition-colors duration-200 flex items-center gap-1"
                             onClick={enabledMyNFTpage}
                         >
                             <Icon icon="ph:wallet-bold" className="w-5 h-5 text-white-600" />
